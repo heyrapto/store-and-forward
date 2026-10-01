@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  caddy:
+    image: caddy:2.7-alpine
+    restart: unless-stopped
+    ports:
+      - "8080:80"  # Expose to host on 8080 so frontend connects easily
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - gateway1
+      - gateway2
+      - gateway3
+
+  gateway1:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    restart: unless-stopped
+    environment:
+      - GATEWAY_ID=gw-1
+      - DB_PATH=/data/messaging.db
+    volumes:
+      - sqlite_data:/data
+
+  gateway2:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    restart: unless-stopped
+    environment:
+      - GATEWAY_ID=gw-2
+      - DB_PATH=/data/messaging.db
+    volumes:
+      - sqlite_data:/data
+
+  gateway3:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    restart: unless-stopped
+    environment:
+      - GATEWAY_ID=gw-3
+      - DB_PATH=/data/messaging.db
+    volumes:
+      - sqlite_data:/data
+
+volumes:
+  sqlite_data:
+  caddy_data:
+  caddy_config:

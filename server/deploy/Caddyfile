@@ -1,0 +1,6 @@
+:80 {
+    # Route WebSocket and HTTP traffic to the backend gateways
+    reverse_proxy gateway1:8080 gateway2:8080 gateway3:8080 {
+        lb_policy round_robin
+    }
+}

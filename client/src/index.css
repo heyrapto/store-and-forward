@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-wa-teal: #075E54;
+  --color-wa-teal-light: #128C7E;
+  --color-wa-light: #DCF8C6;
+  --color-wa-bg: #E5DDD5;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
