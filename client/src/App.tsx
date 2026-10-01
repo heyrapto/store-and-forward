@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Plus, Smartphone } from 'lucide-react';
 import { useAppStore } from './core/store';
 import { PhoneMock } from './features/devices/PhoneMock';
-import { GodView } from './features/inspector/GodView';
+import { MonitoringView } from './features/inspector/MonitoringView';
 
 const AVATARS = ['🦊', '🐰', '🐼', '🐯', '🦁', '🐮', '🐷', '🐸', '🐙', '🦖'];
 const NAMES = ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve', 'Frank', 'Grace', 'Heidi', 'Ivan', 'Judy'];
@@ -78,7 +78,7 @@ function App() {
       </div>
 
       {/* God View */}
-      <GodView />
+      <MonitoringView />
     </div>
   );
 }
