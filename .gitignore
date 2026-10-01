@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Node / Client
+client/node_modules/
+client/dist/
+client/.env*
+
+# Go / Server
+server/bin/
+*.db
+*.db-shm
+*.db-wal
+
+# General
+.env
+.env.*
+*.log
