@@ -44,7 +44,7 @@ export function MonitoringView() {
     <div className="w-[450px] bg-slate-900 text-slate-300 h-full flex flex-col shrink-0 font-mono text-sm border-l border-slate-700 shadow-xl overflow-hidden">
       <div className="p-4 bg-slate-800 border-b border-slate-700 flex items-center gap-2 text-slate-100 font-bold tracking-wider uppercase text-xs">
         <Activity size={16} className="text-wa-light" />
-        Monitoring Dashboard
+        Monitoring 
       </div>
 
       <div className="flex-1 overflow-y-auto p-4 space-y-6">
